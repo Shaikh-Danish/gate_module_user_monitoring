@@ -6,7 +6,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-// import { SessionProvider } from "next-auth/react";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
@@ -37,7 +37,7 @@ export const Providers = ({ children, dehydratedState }: Props) => {
   }
 
   return (
-    // <SessionProvider>
+    <SessionProvider>
       <QueryClientProvider client={queryClientRef.current}>
         <ThemeProvider attribute="class" enableSystem defaultTheme="light">
           <HydrationBoundary state={dehydratedState}>
@@ -45,6 +45,6 @@ export const Providers = ({ children, dehydratedState }: Props) => {
           </HydrationBoundary>
         </ThemeProvider>
       </QueryClientProvider>
-    // </SessionProvider>
+    </SessionProvider>
   );
 };

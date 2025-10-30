@@ -26,23 +26,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Providers>
-      <html lang="en">
+    <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <div className="flex w-full h-dvh bg-background">
-            {/* <Sidebar /> */}
+          >
+            <Providers>
+              <div className="flex w-full h-dvh bg-background">
+                {/* <Sidebar /> */}
 
-            <div className="w-full flex flex-col flex-1 min-w-0">
-              <Header />
-              <main className="w-full flex-1 p-2 md:p-3 overflow-auto">
-                <div className="max-w-[1800px] mx-auto h-full">{children}</div>
-              </main>
-            </div>
-          </div>
+                <div className="w-full flex flex-col flex-1 min-w-0">
+                  <Header />
+                  <main className="w-full flex-1 p-2 md:p-3 overflow-auto">
+                    <div className="max-w-[1800px] mx-auto h-full">{children}</div>
+                  </main>
+                </div>
+              </div>
+          </Providers>
         </body>
       </html>
-    </Providers>
   );
 }
